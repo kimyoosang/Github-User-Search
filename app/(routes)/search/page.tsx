@@ -1,9 +1,8 @@
-import { ErrorFallback } from '@/app/components/common'
+import { ErrorBoundaryWrapper } from '@/app/components/common'
 import Spinner from '@/app/components/common/Spinner'
 import { SearchBar, UserList } from '@/app/components/search'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
-import { ErrorBoundary } from 'react-error-boundary'
 
 export const metadata: Metadata = {
   title: '사용자 검색',
@@ -25,13 +24,13 @@ export default function SearchPage({
     <main className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">GitHub 사용자 검색</h1>
       <SearchBar initialQuery={initialQuery} />
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <ErrorBoundaryWrapper>
         <Suspense fallback={<Spinner />}>
           <div className="mt-10">
             <UserList initialQuery={initialQuery} />
           </div>
         </Suspense>
-      </ErrorBoundary>
+      </ErrorBoundaryWrapper>
     </main>
   )
 }
