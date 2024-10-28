@@ -2,7 +2,7 @@
 
 GitHub 사용자를 검색하고 북마크할 수 있는 웹 애플리케이션입니다.
 
-## [배포 링크](https://bit.ly/4e2anML)
+## [배포 링크](https://github-user-search-h58x.vercel.app/)
 
 ## 주요 기능
 
